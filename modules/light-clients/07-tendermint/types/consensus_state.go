@@ -42,9 +42,9 @@ func (cs ConsensusState) GetTimestamp() uint64 {
 // NOTE: ProcessedTimestamp may be zero if this is an initial consensus state passed in by relayer
 // as opposed to a consensus state constructed by the chain.
 func (cs ConsensusState) ValidateBasic() error {
-	if cs.Root.Empty() {
-		return sdkerrors.Wrap(clienttypes.ErrInvalidConsensus, "root cannot be empty")
-	}
+	//	if cs.Root.Empty() {
+	//		return sdkerrors.Wrap(clienttypes.ErrInvalidConsensus, "root cannot be empty")
+	//	}
 	if err := tmtypes.ValidateHash(cs.NextValidatorsHash); err != nil {
 		return sdkerrors.Wrap(err, "next validators hash is invalid")
 	}
